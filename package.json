@@ -26,7 +26,8 @@
     "dependencies": {
         "glob": "^7.0.3",
         "joi": "^8.1.0",
-        "wechat-api": "^1.35.1"
+        "wechat-api": "^1.35.1",
+        "wechat": "^2.1.0"
     },
     "devDependencies": {
         "code": "^4.0.0",

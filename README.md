@@ -16,6 +16,8 @@ http://doxmate.cool/node-webot/wechat-api/api.html
 ```
 appid: 'your appid, required',
 appsecret: 'your appsecret, required'
+token: 'your token, required'
+encodingAESKey: 'your encodingAESKey, optional'
 ```
 
 # example
