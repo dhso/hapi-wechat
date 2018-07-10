@@ -14,6 +14,7 @@ http://doxmate.cool/node-webot/wechat-api/api.html
 
 # options
 ```
+path: '/wechat, required'
 appid: 'your appid, required',
 appsecret: 'your appsecret, required'
 token: 'your token, required'
