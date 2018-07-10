@@ -1,0 +1,40 @@
+{
+    "name": "hapi-wechat",
+    "version": "1.0.0",
+    "description": "wechat api for hapi",
+    "main": "./lib",
+    "scripts": {
+        "lint": "eslint *.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/dhso/hapi-wechat.git"
+    },
+    "keywords": [
+        "hapi",
+        "wechat",
+        "wechat api"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dhso/hapi-wechat/issues"
+    },
+    "author": {
+        "name": "dhso",
+        "email": "dhso@163.com"
+    },
+    "dependencies": {
+        "glob": "^7.0.3",
+        "joi": "^8.1.0",
+        "wechat-api": "^1.35.1"
+    },
+    "devDependencies": {
+        "code": "^4.0.0",
+        "eslint": "^3.7.1",
+        "hapi": "^15.1.1"
+    },
+    "homepage": "https://github.com/dhso/hapi-wechat",
+    "peerDependencies": {
+        "hapi": "^17.0.0"
+    }
+}
