@@ -25,8 +25,8 @@
     },
     "dependencies": {
         "joi": "^13.1.1",
-        "wechat-api": "^1.35.1",
-        "wechat": "^2.1.0"
+        "co-wechat-api": "^3.7.1",
+        "co-wechat": "^2.3.0"
     },
     "devDependencies": {
         "code": "^4.0.0",
