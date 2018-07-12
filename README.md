@@ -31,7 +31,7 @@ encodingAESKey: 'your encodingAESKey, optional'
 ```
 /wechat/text.js
 
-module.exports = (inMsg) => {
+module.exports = (inMsg, req, h) => {
     return {
         content: inMsg.content
     }
@@ -41,7 +41,7 @@ module.exports = (inMsg) => {
 * subscribe handler
 ```
 /wechat/subscribe.js
-module.exports = (inMsg) => {
+module.exports = (inMsg, req, h) => {
     return {
         msgType: 'news',
         content: [
