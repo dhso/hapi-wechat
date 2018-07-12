@@ -23,6 +23,11 @@ encodingAESKey: 'your encodingAESKey, optional'
 ```
 
 # example
+* support type
+```
+['text', 'image', 'voice', 'video', 'location', 'link', 'subscribe', 'unsubscribe', 'click']
+```
+* modules like this
 ```
 /wechat/text.js
 
