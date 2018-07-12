@@ -9,7 +9,7 @@ npm install github:dhso/hapi-wechat
 #api doc
 
 ```
-http://doxmate.cool/node-webot/wechat-api/api.html
+http://doxmate.cool/node-webot/co-wechat-api/api.html
 ```
 
 # options
@@ -31,11 +31,9 @@ encodingAESKey: 'your encodingAESKey, optional'
 ```
 /wechat/text.js
 
-module.exports = (inMsg, req, h) => {
+module.exports = async (inMsg, req, h) => {
     // wechat_api send message
-    h.wechat_api.sendText(inMsg.fromUsername, 'Hello world', function(err, data, res){
-
-    });
+    await h.wechat_api.sendText(inMsg.fromUsername, 'Hello world');
 
     // return message
     return {
