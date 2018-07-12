@@ -32,12 +32,19 @@ encodingAESKey: 'your encodingAESKey, optional'
 /wechat/text.js
 
 module.exports = async (inMsg, req, h) => {
-    // wechat_api send message
-    await h.wechat_api.sendText(inMsg.fromUsername, 'Hello world');
-
-    // return message
-    return {
-        content: inMsg.content
+    try {
+        // wechat api send message
+        let res = await h.wechat_api.sendText(inMsg.fromUsername, 'Hello world');
+        console.log(res);
+        // send common message
+        return {
+            content: inMsg.content
+        }
+    } catch (err) {
+        // send error message
+        return {
+            content: err.message
+        }
     }
 };
 ```
