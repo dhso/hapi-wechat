@@ -65,3 +65,66 @@ module.exports = (inMsg, req, h) => {
     }
 };
 ```
+
+* a tuling robot example
+```
+module.exports = async (inMsg, req, h) => {
+    try {
+        let reply, tuling = await h.axios.post('http://www.tuling123.com/openapi/api', {
+            "key": "your key",
+            "userid": inMsg.fromUsername,
+            "info": inMsg.content
+        });
+        switch (tuling.data.code) {
+            case 100000:
+                reply = { 'content': tuling.data.text };
+                break;
+            case 200000:
+                reply = {
+                    'msgType': 'news',
+                    'content': [{
+                        'title': tuling.data.text,
+                        'description': '请点击跳转到结果页面。',
+                        'url': tuling.data.url
+                    }]
+                }
+                break;
+            case 302000:
+                reply = {
+                    'msgType': 'news',
+                    'content': []
+                }
+                for (var item of tuling.data.list) {
+                    if (reply.content.length >= 8) break;
+                    reply.content.push({
+                        'title': item.article,
+                        'description': item.source,
+                        'picurl': item.icon.indexOf('//') == 0 ? 'http:' + item.icon : item.icon,
+                        'url': item.detailurl
+                    });
+                }
+                break;
+            case 308000:
+                reply = {
+                    'msgType': 'news',
+                    'content': []
+                }
+                for (var item of tuling.data.list) {
+                    if (reply.content.length >= 8) break;
+                    reply.content.push({
+                        'title': item.name,
+                        'description': item.info,
+                        'picurl': item.icon.indexOf('//') == 0 ? 'http:' + item.icon : item.icon,
+                        'url': item.detailurl
+                    });
+                }
+                break;
+        }
+        return reply;
+    } catch (err) {
+        return {
+            content: err.message
+        }
+    }
+};
+```
