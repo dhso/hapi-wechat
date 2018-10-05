@@ -1,15 +1,19 @@
 # hapi-wechat
 Wechat plugin for hapi
 
+# co-wechat-api
+```
+version: 3.8.1
+
+https://github.com/node-webot/co-wechat-api
+
+http://doxmate.cool/node-webot/co-wechat-api/api.html
+
+```
+
 # install
 ```
 npm install github:dhso/hapi-wechat
-```
-
-#api doc
-
-```
-http://doxmate.cool/node-webot/co-wechat-api/api.html
 ```
 
 # options
