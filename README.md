@@ -32,8 +32,8 @@ encodingAESKey: 'your encodingAESKey, optional'
 ['text', 'image', 'voice', 'video', 'location', 'link', 'subscribe', 'unsubscribe', 'click']
 ```
 * text handler
-```
-/wechat/text.js
+```javascript
+// /wechat/text.js
 
 module.exports = async (inMsg, req, h) => {
     try {
@@ -54,8 +54,9 @@ module.exports = async (inMsg, req, h) => {
 ```
 
 * subscribe handler
-```
-/wechat/subscribe.js
+```javascript
+// /wechat/subscribe.js
+
 module.exports = (inMsg, req, h) => {
     return {
         msgType: 'news',
@@ -71,7 +72,7 @@ module.exports = (inMsg, req, h) => {
 ```
 
 * a tuling robot example
-```
+```javascript
 module.exports = async (inMsg, req, h) => {
     try {
         let reply, tuling = await h.axios.post('http://www.tuling123.com/openapi/api', {
