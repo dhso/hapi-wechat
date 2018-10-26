@@ -37,7 +37,7 @@
     "devDependencies": {
         "code": "^4.0.0",
         "eslint": "^3.7.1",
-        "hapi": "^15.1.1"
+        "hapi": "^17.1.1"
     },
     "homepage": "https://github.com/dhso/hapi-wechat",
     "peerDependencies": {
